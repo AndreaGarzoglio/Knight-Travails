@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knight Travails</title>
+  <script defer src="main.ce780943dd961f912002.js"></script></head>
+
+  <body>
+    <div class="board-stage">
+      <div id="board" class="board"></div>
+      <p id="move-count" class="move-count"></p>
+    </div>
+
+    <aside class="side-panel" id="side-panel">
+      <button class="side-toggle" id="btn-drawer">
+        <span class="side-toggle-dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </span>
+        <span class="side-toggle-label"
+          >Andrea Garzoglio: ~/knight-travails</span
+        >
+        <span class="side-toggle-chevron" id="drawer-chevron">&#9662;</span>
+      </button>
+
+      <div class="side-content" id="side-content">
+        <div class="intro">
+          <p class="line"><span class="prompt">$</span> node knight.js</p>
+          <div class="intro-head">
+            <h1>Knight Travails</h1>
+            <button class="how-btn" id="btn-how">how it works</button>
+          </div>
+          <p class="desc">
+            Click a square, then another — the knight finds its way there with a
+            breadth-first search.
+          </p>
+        </div>
+
+        <div class="rule"></div>
+
+        <div class="panes single">
+          <div class="pane">
+            <p class="pane-label">move</p>
+
+            <div class="cmd-row">
+              <label for="from-val">from</label>
+              <div class="fields">
+                <input
+                  id="from-val"
+                  type="text"
+                  placeholder="x,y"
+                  class="narrow"
+                />
+              </div>
+            </div>
+
+            <div class="cmd-row">
+              <label for="to-val">to</label>
+              <div class="fields">
+                <input
+                  id="to-val"
+                  type="text"
+                  placeholder="x,y"
+                  class="narrow"
+                />
+              </div>
+              <button id="btn-run" class="run">run</button>
+            </div>
+
+            <div class="cmd-row">
+              <label>random</label>
+              <div class="fields"></div>
+              <button id="btn-random" class="run">run</button>
+            </div>
+
+            <div class="cmd-row">
+              <label>reset</label>
+              <div class="fields"></div>
+              <button id="btn-reset" class="run danger">run</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="rule"></div>
+
+        <div id="log" class="log" aria-live="polite"></div>
+      </div>
+    </aside>
+
+    <dialog id="how-modal" class="how-modal">
+      <div class="how-modal-header">
+        <span id="how-modal-title">How it works</span>
+        <button class="how-modal-close" id="how-modal-close" aria-label="Close">
+          &times;
+        </button>
+      </div>
+      <pre class="how-modal-code"><code id="how-modal-code"></code></pre>
+    </dialog>
+  </body>
+</html>
